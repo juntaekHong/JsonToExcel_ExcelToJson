@@ -78,23 +78,32 @@ const App = () => {
       const thjson = {}
       const arXAjson = {}
       const frjson = {}
+      const spanJson = {}
+      const IndonesianJson = {}
       for(const textItem of data) {
+
         if(textItem.__EMPTY_1 === "번역어") {
           continue;
         }
 
         const transLan = textItem.__EMPTY_1.replace( /\r\n/gi, '\n')
 
-        zhChtjson[transLan] = textItem.__EMPTY_5 ? textItem.__EMPTY_5.replace( /\r\n/gi, '\n') : ""
-        thjson[transLan] = textItem.__EMPTY_6 ? textItem.__EMPTY_6.replace( /\r\n/gi, '\n') : ""
-        arXAjson[transLan] = textItem.__EMPTY_7 ? textItem.__EMPTY_7.replace( /\r\n/gi, '\n') : ""
-        frjson[transLan] = textItem.__EMPTY_8 ? textItem.__EMPTY_8.replace( /\r\n/gi, '\n') : ""
+
+
+        zhChtjson[transLan] = textItem.__EMPTY_4 ? textItem.__EMPTY_4.replace( /\r\n/gi, '\n') : ""
+        thjson[transLan] = textItem.__EMPTY_5 ? textItem.__EMPTY_5.replace( /\r\n/gi, '\n') : ""
+        arXAjson[transLan] = textItem.__EMPTY_6 ? textItem.__EMPTY_6.replace( /\r\n/gi, '\n') : ""
+        frjson[transLan] = textItem.__EMPTY_7 ? textItem.__EMPTY_7.replace( /\r\n/gi, '\n') : ""
+        spanJson[transLan] = textItem.__EMPTY_8 ? textItem.__EMPTY_8.replace( /\r\n/gi, '\n') : ""
+        IndonesianJson[transLan] = textItem.__EMPTY_9 ? textItem.__EMPTY_9.replace( /\r\n/gi, '\n') : ""
       }
 
       allJson["zhcht"] = zhChtjson
       allJson["th"] = thjson
       allJson["arXA"] = arXAjson
       allJson["fr"] = frjson
+      allJson["span"] = spanJson
+      allJson["Indonesian"] = IndonesianJson
 
       setJsonData(allJson)
     }
